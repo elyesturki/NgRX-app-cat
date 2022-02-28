@@ -25,4 +25,13 @@ export class ProductsService {
     return this.httpClient.get<IProduct[]>(this.host + "/products?available=true")
   }
 
+  searchProducts(keyword: string) : Observable<IProduct[]> {
+    return this.httpClient.get<IProduct[]>(this.host + `/products?name_like=${keyword}`)
+  }
+
+  checkSelectProduct(product: IProduct) : Observable<IProduct> {
+    product.selected = !product.selected;
+    return this.httpClient.put<IProduct>(this.host+'/products/' + product.id,product)
+  }
+
 }

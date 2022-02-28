@@ -33,7 +33,7 @@ export class ProductsComponent implements OnInit {
     this.products$ = this.productsService.getSelectedProducts()
     .pipe(
       map(data => ({dataState: DataStateEnum.LOADED, data:data})), // quand la liste de produit est chargé
-      startWith({dataState: DataStateEnum.LOADING}), // return une valeur avant même que la requette soit envoyé
+      startWith({dataState: DataStateEnum.LOADING}), // return une valeur avant même que la requette soit envoyée
       catchError(err => of({dataState: DataStateEnum.ERROR, errorMessage: err.message})) // en cas d'erreur, opéreteur 'of' utilisé pour les observable
     )
   }
@@ -42,8 +42,24 @@ export class ProductsComponent implements OnInit {
     this.products$ = this.productsService.getAvailableProducts()
     .pipe(
       map(data => ({dataState: DataStateEnum.LOADED, data:data})), // quand la liste de produit est chargé
-      startWith({dataState: DataStateEnum.LOADING}), // return une valeur avant même que la requette soit envoyé
+      startWith({dataState: DataStateEnum.LOADING}), // return une valeur avant même que la requette soit envoyée
       catchError(err => of({dataState: DataStateEnum.ERROR, errorMessage: err.message})) // en cas d'erreur, opéreteur 'of' utilisé pour les observable
+    )
+  }
+
+  onSearch(dataForm: any) {
+    this.products$ = this.productsService.searchProducts(dataForm.keyword)
+    .pipe(
+      map(data => ({dataState: DataStateEnum.LOADED, data:data})), // quand la liste de produit est chargé
+      startWith({dataState: DataStateEnum.LOADING}), // return une valeur avant même que la requette soit envoyée
+      catchError(err => of({dataState: DataStateEnum.ERROR, errorMessage: err.message})) // en cas d'erreur, opéreteur 'of' utilisé pour les observable
+    )
+  }
+
+  onSelected(prd: IProduct) {
+    this.productsService.checkSelectProduct(prd)
+    .subscribe(
+      data=>prd.selected=data.selected
     )
   }
 
