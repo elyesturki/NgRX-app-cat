@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <li class="nav-item active">
+      <button class="btn btn-outline-info ml-2" type="button" (click)="onGetProductsList()">All</button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-outline-info ml-2" type="button" (click)="onSelectedProducts()">Selected</button>
+    </li>
+    <li class="nav-item">
+      <button class="btn btn-outline-info ml-2" type="button" (click)="onAvailableProducts()">Available</button>
+    </li>
+  </ul>
+  <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+
+<ng-container *ngIf="products$ | async as result" [ngSwitch]="result.dataState">
+  <!-- {{result | json}} -->
+  <ng-container *ngSwitchCase="dataStateEnum.LOADING">
+    Loading ...
+  </ng-container>
+  <ng-container *ngSwitchCase="dataStateEnum.ERROR">
+    <div class="alert-danger">
+     Une erreure s'est produite : {{result.errorMessage}}
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="dataStateEnum.LOADED">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Selected</th>
+          <th scope="col">Available</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of result.data">
+          <th scope="row">{{product.id}}</th>
+          <td>{{product.name}}</td>
+          <td>{{product.price}}</td>
+          <td>{{product.quantity}}</td>
+          <td>{{product.selected}}</td>
+          <td>{{product.available}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+</ng-container>
+
+
+<!-- <div class="container" *ngIf="products$">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Selected</th>
+        <th scope="col">Available</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products$ | async">
+        <th scope="row">{{product.id}}</th>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.quantity}}</td>
+        <td>{{product.selected}}</td>
+        <td>{{product.available}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
