@@ -36,7 +36,7 @@
           <th scope="col">Quantity</th>
           <th scope="col">Selected</th>
           <th scope="col">Available</th>
-          <th scope="col"></th>
+          <th scope="col" colspan="2"></th>
         </tr>
       </thead>
       <tbody>
@@ -48,9 +48,14 @@
           <td>{{product.selected}}</td>
           <td>{{product.available}}</td>
           <td>
-            <button class="btn btn-sm" (click)="onSelected(product)" [ngClass]="(product.selected) ? 'btn-success' : 'btn-danger'">
+            <button class="btn btn-sm" (click)="onSelect(product)" [ngClass]="(product.selected) ? 'btn-success' : 'btn-danger'">
               <span *ngIf="product.selected">deselect</span>
               <span *ngIf="!product.selected">Select</span>
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-sm btn-danger" (click)="onDelete(product)">
+              <i class="fa fa-trash" aria-hidden="true"></i>
             </button>
           </td>
         </tr>

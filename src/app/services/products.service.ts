@@ -34,4 +34,8 @@ export class ProductsService {
     return this.httpClient.put<IProduct>(this.host+'/products/' + product.id,product)
   }
 
+  deleteProduct(product: IProduct) : Observable<void> {
+    return this.httpClient.delete<void>(this.host+'/products/' + product.id)
+  }
+
 }

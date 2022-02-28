@@ -56,11 +56,21 @@ export class ProductsComponent implements OnInit {
     )
   }
 
-  onSelected(prd: IProduct) {
+  onSelect(prd: IProduct) {
     this.productsService.checkSelectProduct(prd)
     .subscribe(
-      data=>prd.selected=data.selected
+      data=>prd.selected=data.selected // mise à jours que la valeur selected
     )
+  }
+
+  onDelete(prd: IProduct) {
+    let validateAction=confirm('Etes-vous sûre?');
+    if(validateAction) {
+      this.productsService.deleteProduct(prd)
+        .subscribe(
+          data=>this.onGetProductsList()
+      )
+    }
   }
 
 }
