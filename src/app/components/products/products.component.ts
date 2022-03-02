@@ -5,6 +5,7 @@ import { catchError, map, Observable, of, startWith } from 'rxjs';
 import { DataStateEnum, IAppDataState, ProductsActionTypes } from 'src/app/state/product.state';
 import { Router } from '@angular/router';
 import { IActionEvent } from '../../state/product.state';
+import { EventDriverService } from '../../state/event.driver.service';
 
 @Component({
   selector: 'app-products',
@@ -16,9 +17,15 @@ export class ProductsComponent implements OnInit {
   products$: Observable<IAppDataState<IProduct[]>> | null = null;
   dataStateEnum = DataStateEnum;
 
-  constructor( private productsService: ProductsService, private router: Router) { }
+  constructor( private productsService: ProductsService, private router: Router,
+                private eventDriverService: EventDriverService // le service state
+    ) { }
 
   ngOnInit(): void {
+    this.eventDriverService.sourceEventSubjectObservable.subscribe((actionEvent: IActionEvent)=> {
+      // on écoute l'event via l'observable sourceEventSubjectObservable
+      this.onActionEvent(actionEvent)
+    })
     this.onGetProductsList();
   }
 

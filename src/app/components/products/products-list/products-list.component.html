@@ -25,7 +25,6 @@
         <app-product-item
           *ngFor="let product of result.data"
           [productInput]="product"
-          (actionProductEventEmit)="onActionEvent($event)"
           style="display: contents;"
         ></app-product-item>
       </tbody>

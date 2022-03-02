@@ -4,6 +4,8 @@ import { ProductsService } from '../../services/products.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IProduct } from '../../model/product.model';
 import { CustomValidator } from 'src/app/validators/customValidator';
+import { EventDriverService } from '../../state/event.driver.service';
+import { ProductsActionTypes } from 'src/app/state/product.state';
 
 @Component({
   selector: 'app-edit-product',
@@ -18,7 +20,11 @@ export class EditProductComponent implements OnInit {
   displaySuccessMessage = false;
   displayFormNotTouchedMessage = false
 
-  constructor( private activatedRoute: ActivatedRoute, private productsService: ProductsService, private formbuilder: FormBuilder) {
+  constructor( private activatedRoute: ActivatedRoute,
+      private productsService: ProductsService,
+      private formbuilder: FormBuilder,
+      private eventDriverService: EventDriverService
+      ) {
     this.productId=activatedRoute.snapshot.params['id'];
   }
 
@@ -42,6 +48,7 @@ export class EditProductComponent implements OnInit {
       this.productsService.updateProduct(this.productFormGroup?.value)
       .subscribe(
         (data: IProduct)=>{
+          this.eventDriverService.publishEvent({type: ProductsActionTypes.PRODUCT_UPDATED});
           this.displaySuccessMessage = true;
           this.productFormGroup = this.setProductFormGroup(data)
 

@@ -13,6 +13,7 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
 import { ProductsNavBarComponent } from './components/products/products-nav-bar/products-nav-bar.component';
 import { ProductsListComponent } from './components/products/products-list/products-list.component';
 import { ProductItemComponent } from './components/products/product-item/product-item.component';
+import { CounterStatesComponent } from './components/counter-states/counter-states.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProductItemComponent } from './components/products/product-item/product
     EditProductComponent,
     ProductsNavBarComponent,
     ProductsListComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    CounterStatesComponent
   ],
   imports: [
     BrowserModule,

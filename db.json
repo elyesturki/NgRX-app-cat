@@ -4,8 +4,8 @@
       "id": 1,
       "name": "Computer",
       "price": 4300,
-      "quantity": 600,
-      "selected": false,
+      "quantity": 650,
+      "selected": true,
       "available": true
     },
     {
@@ -21,48 +21,16 @@
       "name": "Smartphone",
       "price": 1200,
       "quantity": 200,
-      "selected": false,
+      "selected": true,
       "available": true
     },
     {
-      "name": "Mac",
-      "price": 5500,
-      "quantity": 100,
-      "selected": true,
-      "available": false,
-      "id": 4
-    },
-    {
-      "name": "PC",
-      "price": 550,
+      "id": 4,
+      "name": "PC sam",
+      "price": "500",
       "quantity": 200,
       "selected": false,
-      "available": false,
-      "id": 5
-    },
-    {
-      "name": "Tablette",
-      "price": "180",
-      "quantity": 100,
-      "selected": false,
-      "available": true,
-      "id": 6
-    },
-    {
-      "name": "Adresse 2",
-      "price": 0,
-      "quantity": 0,
-      "selected": true,
-      "available": true,
-      "id": 7
-    },
-    {
-      "name": "Mac",
-      "price": "3500",
-      "quantity": 300,
-      "selected": true,
-      "available": true,
-      "id": 9
+      "available": true
     }
   ]
 }
