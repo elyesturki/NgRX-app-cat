@@ -21,7 +21,7 @@
       "name": "Smartphone",
       "price": 1200,
       "quantity": 200,
-      "selected": true,
+      "selected": false,
       "available": true
     },
     {
@@ -29,8 +29,16 @@
       "name": "PC sam",
       "price": "500",
       "quantity": 200,
-      "selected": false,
+      "selected": true,
       "available": true
+    },
+    {
+      "name": "top",
+      "price": "22",
+      "quantity": 300,
+      "selected": true,
+      "available": true,
+      "id": 5
     }
   ]
 }
