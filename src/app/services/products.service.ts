@@ -38,4 +38,16 @@ export class ProductsService {
     return this.httpClient.delete<void>(this.host+'/products/' + product.id)
   }
 
+  addProduct(product: IProduct) : Observable<IProduct> {
+    return this.httpClient.post<IProduct>(this.host+'/products/',product)
+  }
+
+  getProduct(id: number) : Observable<IProduct> {
+    return this.httpClient.get<IProduct>(this.host+'/products/'+id)
+  }
+
+  updateProduct(product: IProduct) : Observable<IProduct> {
+    return this.httpClient.put<IProduct>(this.host+'/products/' + product.id,product)
+  }
+
 }

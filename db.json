@@ -5,7 +5,7 @@
       "name": "Computer",
       "price": 4300,
       "quantity": 600,
-      "selected": true,
+      "selected": false,
       "available": true
     },
     {
@@ -28,9 +28,81 @@
       "name": "Mac",
       "price": 5500,
       "quantity": 100,
-      "selected": true,
+      "selected": false,
       "available": false,
       "id": 4
+    },
+    {
+      "name": "PC",
+      "price": 550,
+      "quantity": 200,
+      "selected": false,
+      "available": false,
+      "id": 5
+    },
+    {
+      "name": "Tablette",
+      "price": "180",
+      "quantity": 100,
+      "selected": true,
+      "available": true,
+      "id": 6
+    },
+    {
+      "name": "Adresse 2",
+      "price": 0,
+      "quantity": 0,
+      "selected": false,
+      "available": true,
+      "id": 7
+    },
+    {
+      "name": "pccc",
+      "price": "33",
+      "quantity": 0,
+      "selected": false,
+      "available": false,
+      "id": 8
+    },
+    {
+      "name": "Mac",
+      "price": "3500",
+      "quantity": 300,
+      "selected": true,
+      "available": true,
+      "id": 9
+    },
+    {
+      "name": "Mac",
+      "price": "22",
+      "quantity": 3,
+      "selected": false,
+      "available": false,
+      "id": 10
+    },
+    {
+      "name": "zz",
+      "price": 0,
+      "quantity": 0,
+      "selected": false,
+      "available": true,
+      "id": 11
+    },
+    {
+      "id": 12,
+      "name": "aab3",
+      "price": "200",
+      "quantity": 222,
+      "selected": true,
+      "available": false
+    },
+    {
+      "id": 13,
+      "name": "smarttt",
+      "price": "790",
+      "quantity": 180,
+      "selected": false,
+      "available": true
     }
   ]
 }
