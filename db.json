@@ -13,7 +13,7 @@
       "name": "Printer",
       "price": 300,
       "quantity": 100,
-      "selected": true,
+      "selected": false,
       "available": false
     },
     {
@@ -21,14 +21,14 @@
       "name": "Smartphone",
       "price": 1200,
       "quantity": 200,
-      "selected": false,
+      "selected": true,
       "available": true
     },
     {
       "name": "Mac",
       "price": 5500,
       "quantity": 100,
-      "selected": false,
+      "selected": true,
       "available": false,
       "id": 4
     },
@@ -44,7 +44,7 @@
       "name": "Tablette",
       "price": "180",
       "quantity": 100,
-      "selected": true,
+      "selected": false,
       "available": true,
       "id": 6
     },
@@ -52,7 +52,7 @@
       "name": "Adresse 2",
       "price": 0,
       "quantity": 0,
-      "selected": false,
+      "selected": true,
       "available": true,
       "id": 7
     },
@@ -81,28 +81,20 @@
       "id": 10
     },
     {
-      "name": "zz",
-      "price": 0,
-      "quantity": 0,
-      "selected": false,
-      "available": true,
-      "id": 11
-    },
-    {
       "id": 12,
       "name": "aab3",
       "price": "200",
-      "quantity": 222,
+      "quantity": 400,
       "selected": true,
       "available": false
     },
     {
-      "id": 13,
-      "name": "smarttt",
-      "price": "790",
-      "quantity": 180,
-      "selected": false,
-      "available": true
+      "name": "Adresse 2",
+      "price": 0,
+      "quantity": 0,
+      "selected": true,
+      "available": true,
+      "id": 13
     }
   ]
 }

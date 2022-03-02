@@ -10,3 +10,18 @@ export interface IAppDataState<T> {
   data?: T,
   errorMessage?: string
 }
+
+export enum ProductsActionTypes {
+  GET_ALL_PRODUCTS = "[Products] Get All products",
+  GET_SELECTED_PRODUCTS = "[Products] Get Selected products",
+  GET_AVAILABLE_PRODUCTS = "[Products] Get Available products",
+  SEARCH_PRODUCTS = "[Products] Search products",
+  NEW_PRODUCTS = "[Products] New products",
+  SELECT_PRODUCT = "[Products] Select product",
+  DELETE_PRODUCT = "[Products] Delete product",
+  EDIT_PRODUCT = "[Products] Edit product",
+}
+export interface IActionEvent {
+  type : ProductsActionTypes,
+  payload? : any
+}
