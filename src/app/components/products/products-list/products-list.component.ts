@@ -31,4 +31,19 @@ export class ProductsListComponent implements OnInit {
     this.productActionEventEmitter.emit({type: ProductsActionTypes.EDIT_PRODUCT, payload: product})
   }
 
+  // event action from nav bar and prd list
+  onActionEvent(event: IActionEvent) {
+    switch (event.type) {
+      case ProductsActionTypes.SELECT_PRODUCT:
+          this.onSelect(event.payload)
+          break;
+      case ProductsActionTypes.DELETE_PRODUCT:
+          this.onDelete(event.payload)
+          break;
+      case ProductsActionTypes.EDIT_PRODUCT:
+          this.onEdit(event.payload);
+          break;
+    }
+  }
+
 }

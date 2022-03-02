@@ -85,7 +85,7 @@ export class ProductsComponent implements OnInit {
 
   // event action from nav bar and prd list
   onActionEvent(event: IActionEvent) {
-    console.log(event);
+    console.log("Action emit reçue: ", event.type);
     switch (event.type) {
       case ProductsActionTypes.GET_ALL_PRODUCTS:
         this.onGetProductsList();
