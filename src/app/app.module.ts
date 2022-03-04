@@ -7,6 +7,11 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductsNavBarComponent } from './components/products/products-nav-bar/products-nav-bar.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { productsReducer } from './ngrx/products.reducer';
+import { ProductsEffects } from './ngrx/products.effects';
 
 @NgModule({
   declarations: [
@@ -19,7 +24,10 @@ import { ProductsNavBarComponent } from './components/products/products-nav-bar/
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot({catalogState:productsReducer}),
+    EffectsModule.forRoot([ProductsEffects]),
+    StoreDevtoolsModule.instrument()
   ],
   providers: [],
   bootstrap: [AppComponent]
