@@ -7,8 +7,53 @@
     <ng-container *ngSwitchCase="DataStateEnum.LOADING">
       <div class="p-2">Loading ...</div>
     </ng-container>
-    <ng-container *ngSwitchCase="DataStateEnum.LOADING">
-      <div class="p-2">Loading ...</div>
+    <ng-container *ngSwitchCase="DataStateEnum.ERROR">
+      <div class="p-2 text-danger">Error! {{state.errorMessage}}</div>
+    </ng-container>
+    <ng-container *ngSwitchCase="DataStateEnum.LOADED">
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Selected</th>
+            <th scope="col">Available</th>
+            <th scope="col" colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of state.products">
+            <th scope="row">{{product.id}}</th>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+            <td>
+              <i class="fa " [ngClass]="product.selected ? 'fa-heart text-danger': 'fa-heart-o'"></i>
+            </td>
+            <td>
+              <i class="fa " [ngClass]="product.available ? 'fa-check-square-o text-success': 'fa-square-o'"></i>
+            </td>
+            <td>
+              <button class="btn btn-sm" (click)="onSelect(product)" [ngClass]="(product.selected) ? 'btn-success' : 'btn-danger'">
+                <span *ngIf="product.selected">deselect</span>
+                <span *ngIf="!product.selected">Select</span>
+              </button>
+            </td>
+            <td>
+              <button class="btn btn-sm btn-danger" (click)="onDelete(product)">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+            </td>
+            <td>
+              <button class="btn btn-sm btn-warning" (click)="onEdit(product)">
+                <i class="fa fa-edit" aria-hidden="true"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </ng-container>
 
   </ng-container>

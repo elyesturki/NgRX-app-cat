@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { map, Observable } from 'rxjs';
 import { IProductsState, ProductsStateEnum } from '../../ngrx/products.reducer';
+import { IProduct } from '../../model/product.model';
 
 @Component({
   selector: 'app-products',
@@ -22,6 +23,18 @@ export class ProductsComponent implements OnInit {
           return state.catalogState
         })
     )
+  }
+
+  onSelect(product: IProduct) {
+
+  }
+
+  onDelete(product: IProduct) {
+
+  }
+
+  onEdit(product: IProduct) {
+
   }
 
 
