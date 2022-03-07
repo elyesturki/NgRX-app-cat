@@ -7,7 +7,7 @@ Bootstrap 4.5<br>
 Font Awesome 4.7<br>
 
 ## Development server
-- Create db.json on your root project and push this content inside it: <br>
+- Create <b>db.json</b> on your root project and push this content inside it: <br>
 {
   "products": [
     {
