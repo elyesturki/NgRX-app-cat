@@ -7,8 +7,54 @@ Bootstrap 4.5<br>
 Font Awesome 4.7<br>
 
 ## Development server
+- Create db.json on your root project and push this content inside it: <br>
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Computer",
+      "price": 4300,
+      "quantity": 800,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": 2,
+      "name": "Printer",
+      "price": 300,
+      "quantity": 100,
+      "selected": false,
+      "available": false
+    },
+    {
+      "id": 3,
+      "name": "Smartphone",
+      "price": 1200,
+      "quantity": 200,
+      "selected": false,
+      "available": true
+    },
+    {
+      "id": 4,
+      "name": "PC sam",
+      "price": "500",
+      "quantity": 200,
+      "selected": true,
+      "available": true
+    },
+    {
+      "name": "top",
+      "price": "22",
+      "quantity": 300,
+      "selected": true,
+      "available": true,
+      "id": 5
+    }
+  ]
+} 
+<br><br>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
