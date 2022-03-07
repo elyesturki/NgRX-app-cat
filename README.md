@@ -1,6 +1,10 @@
 # NgRXAppCat
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2. <br>
+ngRx<br>
+json-server<br>
+Bootstrap 4.5<br>
+fontawesome 4.7<br>
 
 ## Development server
 
