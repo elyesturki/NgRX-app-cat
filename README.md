@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ngRx<br>
 json-server<br>
 Bootstrap 4.5<br>
-fontawesome 4.7<br>
+Font Awesome 4.7<br>
 
 ## Development server
 
